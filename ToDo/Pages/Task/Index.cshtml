@@ -1,0 +1,37 @@
+﻿@page
+@model ToDo.Pages.Task.IndexModel
+
+<div class="container">
+    <div class="title">
+        <h2>My Tasks</h2>
+    </div>
+    <div>
+        <a asp-page="add" class="btn btn-primary">
+            Add New Task
+        </a>
+    </div>
+    <div class="task-list">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th width="20%">Title</th>
+                    <th width="20%">Description</th>
+                    <th width="20%">Priority</th>
+                    <th width="20%">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var obj in Model.UserTasks){
+                    <tr>
+                        <td>@obj.Title</td>
+                        <td>@obj.Description</td>
+                        <td>@obj.Priority</td>
+                        <td>@obj.Status</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    
+    
+</div>

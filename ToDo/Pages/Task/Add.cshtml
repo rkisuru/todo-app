@@ -1,0 +1,38 @@
+﻿@page
+@model ToDo.Pages.Task.AddModel
+<form method="post">
+    <div>
+        <div>
+            <h2>Add New Task</h2>
+        </div>
+        <div>
+            Title : 
+            <input type="text" name="taskTitle" />
+        </div>
+        <div>
+            Description :
+            <textarea></textarea>
+        </div>
+        <div>
+            Priority :
+            <select name="prority">
+                <option value="none"> </option>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+        </div>
+        <div>
+            Status : 
+            <select name="status">
+                <option value="none"> </option>
+                <option value="pending">Pending</option>
+                <option value="completed">Completed</option>
+                <option value="overdue">Overdue</option>
+            </select>
+        </div>
+        <div>
+            <button class="btn btn-primary">Add Task</button>
+        </div>
+    </div>
+</form>
