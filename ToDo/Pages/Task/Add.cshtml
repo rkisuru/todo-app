@@ -7,15 +7,15 @@
         </div>
         <div>
             Title : 
-            <input type="text" name="taskTitle" />
+            <input asp-for="@Model.Task.Title" class="form-control"/>
         </div>
         <div>
             Description :
-            <textarea></textarea>
+            <textarea asp-for="@Model.Task.Description" class="form-control"></textarea>
         </div>
         <div>
             Priority :
-            <select name="prority">
+            <select asp-for="@Model.Task.Priority" class="form-select">
                 <option value="none"> </option>
                 <option value="low">Low</option>
                 <option value="medium">Medium</option>
@@ -24,7 +24,7 @@
         </div>
         <div>
             Status : 
-            <select name="status">
+            <select asp-for="@Model.Task.Status" class="form-select">
                 <option value="none"> </option>
                 <option value="pending">Pending</option>
                 <option value="completed">Completed</option>
