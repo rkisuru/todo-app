@@ -8,6 +8,7 @@
         <div>
             Title : 
             <input asp-for="@Model.Task.Title" class="form-control"/>
+            <span asp-validation-for="@Model.Task.Title" class="text-danger"></span>
         </div>
         <div>
             Description :

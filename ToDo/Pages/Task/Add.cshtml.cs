@@ -20,9 +20,14 @@ namespace ToDo.Pages.Task
         }
         public async Task<IActionResult> OnPost()
         {
-            await _db.Task.AddAsync(Task);
-            await _db.SaveChangesAsync();
-            return RedirectToPage("Index");
+            if(ModelState.IsValid) {
+                await _db.Task.AddAsync(Task);
+                await _db.SaveChangesAsync();
+                return RedirectToPage("Index");
+            }
+            else {
+                return Page();
+            }
         }
     }
 }
