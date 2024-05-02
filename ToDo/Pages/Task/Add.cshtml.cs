@@ -25,9 +25,8 @@ namespace ToDo.Pages.Task
                 await _db.SaveChangesAsync();
                 return RedirectToPage("Index");
             }
-            else if (Request.Form.ContainsKey("cancel"))
-            {
-                return RedirectToPage("index");
+            else if(Request.Form.ContainsKey("cancel")){
+                return RedirectToPage("Index");
             }
             else {
                 return Page();
