@@ -1,6 +1,7 @@
 ﻿@page
 @model ToDo.Pages.Task.EditModel
 <form method="post">
+    <input hidden asp-for="@Model.Task.Id"/>
     <div>
         <div>
             <h2>Add New Task</h2>
@@ -33,7 +34,7 @@
             </select>
         </div>
         <div>
-            <button class="btn btn-primary">Add Task</button>
+            <button class="btn btn-primary">Update Task</button>
             <button class="btn btn-danger" name="cancel">Cancel</button>
         </div>
     </div>

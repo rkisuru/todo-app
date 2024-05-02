@@ -15,13 +15,14 @@ namespace ToDo.Pages.Task
         {
             _db = db;
         }
-        public void OnGet()
+        public void OnGet(int id)
         {
+            Task = _db.Task.Find(id);
         }
         public async Task<IActionResult> OnPost()
         {
             if(ModelState.IsValid) {
-                await _db.Task.AddAsync(Task);
+                _db.Task.Update(Task);
                 await _db.SaveChangesAsync();
                 return RedirectToPage("Index");
             }
