@@ -21,16 +21,14 @@ namespace ToDo.Pages.Task
         }
         public async Task<IActionResult> OnPost()
         {
-            if(ModelState.IsValid) {
-                var task = _db.Task.Find(Task.Id);
-        
-                if(task != null) 
-                {
-                    _db.Task.Remove(task);
-                    await _db.SaveChangesAsync();
-                }
+            var task = _db.Task.Find(Task.Id);
+
+            if (task != null)
+            {
+                _db.Task.Remove(task);
+                await _db.SaveChangesAsync();
                 return RedirectToPage("Index");
-            }            
+            }
             else {
                 return Page();
             }
