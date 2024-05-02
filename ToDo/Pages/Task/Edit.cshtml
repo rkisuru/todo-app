@@ -1,0 +1,40 @@
+﻿@page
+@model ToDo.Pages.Task.EditModel
+<form method="post">
+    <div>
+        <div>
+            <h2>Add New Task</h2>
+        </div>
+        <div>
+            Title : 
+            <input asp-for="@Model.Task.Title" class="form-control"/>
+            <span asp-validation-for="@Model.Task.Title" class="text-danger"></span>
+        </div>
+        <div>
+            Description :
+            <textarea asp-for="@Model.Task.Description" class="form-control"></textarea>
+        </div>
+        <div>
+            Priority :
+            <select asp-for="@Model.Task.Priority" class="form-select">
+                <option value="none"> </option>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+        </div>
+        <div>
+            Status : 
+            <select asp-for="@Model.Task.Status" class="form-select">
+                <option value="none"> </option>
+                <option value="pending">Pending</option>
+                <option value="completed">Completed</option>
+                <option value="overdue">Overdue</option>
+            </select>
+        </div>
+        <div>
+            <button class="btn btn-primary">Add Task</button>
+            <button class="btn btn-danger" name="cancel">Cancel</button>
+        </div>
+    </div>
+</form>

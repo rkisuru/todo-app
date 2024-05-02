@@ -27,6 +27,10 @@
                         <td>@obj.Description</td>
                         <td>@obj.Priority</td>
                         <td>@obj.Status</td>
+                        <td>
+                            <a asp-page="Edit" asp-route-id="@obj.Id" class="btn btn-primary">Edit</a>
+                            <button class="btn btn-danger">Delete</button>
+                        </td>
                     </tr>
                 }
             </tbody>
