@@ -24,6 +24,7 @@ namespace ToDo.Pages.Task
             if(ModelState.IsValid) {
                 _db.Task.Update(Task);
                 await _db.SaveChangesAsync();
+                TempData["success"] = "Category updated successfully !";
                 return RedirectToPage("Index");
             }
             else {

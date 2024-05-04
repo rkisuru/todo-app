@@ -23,6 +23,7 @@ namespace ToDo.Pages.Task
             if(ModelState.IsValid) {
                 await _db.Task.AddAsync(Task);
                 await _db.SaveChangesAsync();
+                TempData["success"] = "Category Added successfully !";
                 return RedirectToPage("Index");
             }
             else if(Request.Form.ContainsKey("cancel")){

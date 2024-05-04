@@ -27,6 +27,7 @@ namespace ToDo.Pages.Task
             {
                 _db.Task.Remove(task);
                 await _db.SaveChangesAsync();
+                TempData["success"] = "Category removed successfully !";
                 return RedirectToPage("Index");
             }
             else {
